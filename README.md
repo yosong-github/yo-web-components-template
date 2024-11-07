@@ -20,6 +20,10 @@
 - [x] Pnpm
 - [x] Vite
 
+## 预览
+
+![Alt text](public/image.png)
+
 ## 规范
 
 ### components（组件）
