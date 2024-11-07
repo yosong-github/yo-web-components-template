@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<template>
+  <style>
+    /* 提示框样式 */
+    .index_tips {
+      background-color: #fff;
+      z-index: 999;
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 10px 2px 20px rgba(0, 0, 0, .15), -10px -2px 20px rgba(0, 0, 0, .15);
+      max-width: 400px;
+      font-size: 14px;
+
+
+      .tips_content {
+        min-height: 1.1rem;
+        line-height: 1.1rem;
+        font-size: small;
+        margin: 10px;
+        max-height: 250px;
+        overflow-x: hidden;
+
+        >div {
+          line-height: normal;
+        }
+      }
+
+      .tip {
+        position: absolute;
+        top: -9px;
+        content: '';
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg);
+        left: 101px;
+        background-color: #fff;
+      }
+
+      .tipLeft {
+        position: absolute;
+        top: -9px;
+        content: '';
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg);
+        left: 101px;
+        background-color: #fff;
+      }
+    }
+
+  </style>
+  <div class="index_tips" style="position: fixed;top: 171.5px;left: 328.546875px;">
+    <div class="tips_content"></div>
+    <div class="tip"></div>
+  </div>
+</template>

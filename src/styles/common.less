@@ -1,0 +1,203 @@
+:root {
+  // 颜色
+  --color-theme-primary: #3f51b5; // 主题色
+  --color-theme-info: #3f9ab5; // 信息色
+  --color-theme-danger: #b53f3f; // 警告色
+  --color-theme-success: #4bb53f; // 成功色
+
+  // 字体
+  --font-default-color: #344767; // 默认字体颜色
+  --font-active-color: var(--color-theme-primary); // 激活字体颜色
+
+  // 菜单
+  --menu-active-color: #000; // 菜单激活颜色
+  --menu-defalut-color: #67748e; // 菜单颜色
+}
+* {
+  box-sizing: border-box;
+  color: var(--font-default-color);
+}
+body {
+  font-size: 16px;
+}
+
+/* 卡片 */
+.card {
+  padding: 16px;
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 1rem;
+  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+}
+.card-header {
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--font-active-color);
+}
+.card-body {
+  flex: 1;
+}
+
+/* 表格样式 */
+.yotable {
+  width: 100%;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-spacing: 0;
+  // color: #6f747a;
+  font-size: 14px;
+  max-width: 100%;
+  text-align: left;
+}
+.yotable thead tr th {
+  background: #f5f7fa; /* 设置背景色 */
+}
+.yotable th {
+  font-weight: bold; /* 设置字体加粗 */
+  padding: 16px; /* 设置单元格内边距 */
+  font-size: small;
+}
+.yotable td {
+  border-top: solid #c9d1e455; /* 设置单元格边框样式和颜色 */
+  border-width: 0.9px;
+  padding: 16px; /* 设置单元格内边距 */
+}
+.yotable tbody > tr {
+  transition: background-color 0.25s ease;
+}
+.yotable tbody > tr:hover {
+  background-color: #f5f7fa !important;
+}
+.yotable a {
+  color: var(--color-theme-primary);
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
+.yotable .fw {
+  font-weight: 600;
+}
+.yotable .tr {
+  text-align: right;
+}
+
+.yotable .tl {
+  text-align: left;
+}
+
+.yotable .w100 {
+  width: 150px;
+}
+.yotable .w40 {
+  width: 40px;
+}
+.yotable .w169 {
+  width: 169px;
+}
+.yotable .w300 {
+  width: 300px;
+}
+.yotable .yo_success {
+  color: var(--color-theme-success);
+}
+
+.yotable select {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 90%;
+  text-indent: 0;
+  vertical-align: middle;
+  outline: 0;
+  padding: 6px;
+  border-radius: 3px;
+  border: 1px solid #d0d7e7;
+  background-color: #fff;
+}
+.yotable input {
+  outline: 0;
+  padding: 6px;
+  border-radius: 3px;
+  border: 1px solid #d0d7e7;
+  background-color: #fff;
+}
+
+.stripe tr:nth-child(even) {
+  background-color: #fafafa; /* 设置背景色 */
+}
+
+/* 自定义快捷 */
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.juc-between {
+  justify-content: space-between;
+}
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 4rem !important;
+}
+
+.mb-7 {
+  margin-bottom: 6rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 8rem !important;
+}
+
+.mb-9 {
+  margin-bottom: 10rem !important;
+}
+
+.mb-10 {
+  margin-bottom: 12rem !important;
+}
+
+.mb-11 {
+  margin-bottom: 14rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 16rem !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}

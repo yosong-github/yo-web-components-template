@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<template>
+  <style>
+    .toggle {
+      width: 50px;
+      height: 21px;
+      box-sizing: border-box;
+      padding: 3px;
+      border-radius: 25px;
+      background-color: #e1e1e1;
+      transition: background-color 0.3s ease;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .toggle::after {
+      content: '';
+      display: block;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 2.5px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .toggle_on::after {
+      margin-left: calc(50% + 4px);
+    }
+
+    .toggle_on {
+      background-color: var(--color-theme-primary);
+    }
+
+  </style>
+  <div class="toggle">
+    <span data-lang="common.on" style="
+        color: #fff;
+        font-size: 10px;
+        margin-left: 1px;
+        pointer-events: none;
+      "></span>
+    <span data-lang="common.off" style="
+        color: #aaa;
+        margin-right: 0;
+        font-size: 10px;
+        margin-right: 1px;
+        pointer-events: none;
+      "></span>
+  </div>
+</template>

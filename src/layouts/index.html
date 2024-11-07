@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<template>
+  <style lang="less">
+    .yo-layout {
+      display: flex;
+      height: 100vh;
+
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+          flex: 1;
+          padding: 24px;
+        }
+      }
+    }
+
+  </style>
+  <div class="yo-layout">
+    <yo-layout-menu class="left"></yo-layout-menu>
+    <div class="main">
+      <yo-layout-header></yo-layout-header>
+      <div class="content">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>

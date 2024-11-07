@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<template>
+  <style>
+    .root {
+      height: 100%;
+      background-color: skyblue;
+    }
+
+  </style>
+  <div id="root">
+    <div class="card mb-4">
+      <span class="yosong">鼠标放上来我有提示</span>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">我是卡片header</div>
+      <div class="card-body  flex juc-between">
+        <div class="card  mb-4 flex-1">
+          <div class="card-header">
+            <span>自定义按钮</span>
+          </div>
+          <div class="card-body flex juc-between">
+            <yo-button type="primary" lang="test.primary" @click="customBtn"></yo-button>
+            <yo-button type="info" lang="test.info" @click="customBtn"></yo-button>
+            <yo-button type="danger" lang="test.danger" @click="customBtn"></yo-button>
+            <yo-button type="success" lang="test.success" @click="customBtn"></yo-button>
+            <yo-button lang="test.defalut" @click="customBtn"></yo-button>
+          </div>
+        </div>
+        <div style="width: 16px;"></div>
+        <div class="card mb-4 flex-1">
+          <div class="card-header">
+            <span>自定义开关</span>
+          </div>
+          <div class="card-body flex juc-between">
+            <yo-switch @click="switchEvn" active="false"></yo-switch>
+            <yo-switch @click="switchEvn"></yo-switch>
+            <yo-switch @click="switchEvn" active="true"></yo-switch>
+            <yo-switch @click="switchEvn" active></yo-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">自定义表格</div>
+      <div class="card-body">
+        <table class="yotable center">
+          <thead>
+            <tr>
+              <th data-lang="Port" rowspan="2"><a href="javascript:">端口</a></th>
+              <th data-lang="Status" rowspan="2">开关</th>
+              <th data-lang="Speed/Duplex" colspan="2">速率/双工</th>
+              <th data-lang="Flow Control" colspan="2">流量控制</th>
+            </tr>
+            <tr>
+              <th data-lang="Config Status">配置状态</th>
+              <th data-lang="Actual Status">实际状态</th>
+              <th data-lang="Config Status">配置状态</th>
+              <th data-lang="Actual Status">实际状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Port 1</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Half Duplex"> 半双工 </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Half Duplex"> 半双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td data-lang="Disabled">关闭</td>
+              <td>
+                100M /
+                <span data-lang="Auto"> Auto </span>
+              </td>
+              <td data-lang="Disconnected">断开</td>
+              <td data-lang="Disabled">关闭</td>
+              <td data-lang="Disabled">关闭</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Auto"> Auto </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- <yo-mask show="false" @click="close"></yo-mask> -->
+
+    <!-- <button class="gologin" @click="goLogin">去登陆</button> -->
+  </div>
+</template>
