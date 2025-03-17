@@ -7,6 +7,7 @@
  */
 import { defineConfig } from 'vite'
 import path from 'path'
+import vitePluginCompileLessInTemplate from './plugin/vite-plugin-compile-less-in-template'
 
 // 打包成单页面
 export default defineConfig({
@@ -14,6 +15,7 @@ export default defineConfig({
   server: {
     port: 3000
   },
+  plugins: [vitePluginCompileLessInTemplate()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
