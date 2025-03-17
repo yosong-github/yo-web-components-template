@@ -1,11 +1,12 @@
 on: push
 
 jobs:
-  test:
+  npm-build:
+    name: 开始工作
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: pwd
-      - run: npm --version
-      - run: npm i pnpm
-      - run: pnpm --version
+    - name:读取厂库文件
+      uses: actions/checkout@v4
+    - name: 安装依赖/打包文件
+      run: npm i
+      run: npm run build
