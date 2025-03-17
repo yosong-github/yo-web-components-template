@@ -5,8 +5,9 @@ jobs:
     name: 开始工作
     runs-on: ubuntu-latest
     steps:
-    - name:读取厂库文件
+    - name: 读取厂库文件
       uses: actions/checkout@v4
+
     - name: 安装依赖/打包文件
       run: npm i
       run: npm run build
