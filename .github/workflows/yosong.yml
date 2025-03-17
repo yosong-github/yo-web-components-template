@@ -3,6 +3,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    setps:
+    steps:
+      - uses: actions/checkout@v4
       - run: pwd
       - run: pnpm --version
