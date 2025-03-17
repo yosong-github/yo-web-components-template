@@ -1,3 +1,8 @@
+name: 构建项目部署到github-pages
+
+permissions:
+  contents: write
+
 on: push
 
 jobs:
@@ -5,9 +10,16 @@ jobs:
     name: 开始工作
     runs-on: ubuntu-latest
     steps:
-    - name: 读取厂库文件
-      uses: actions/checkout@v4
+      - name: 读取厂库文件
+        uses: actions/checkout@v4
 
-    - name: 安装依赖/打包文件
-      run: npm i
-      run: npm run build
+      - name: 安装依赖/打包文件
+        run: |
+          npm i
+          npm run build
+
+      - name: 部署到github page
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
