@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pwd
+      - run: npm --version
+      - run: npm i pnpm
       - run: pnpm --version
