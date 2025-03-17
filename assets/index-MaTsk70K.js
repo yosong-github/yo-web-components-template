@@ -1,8 +1,6 @@
-import{_ as t}from"./index-DoESu-js.js";const e=`<!DOCTYPE html>
+import{_ as t}from"./index-jjUas1RV.js";const e=`<!DOCTYPE html>
 <template>
-  <style>
-
-  </style>
+  <style></style>
   <div class="ipSetting">
     静态mac
   </div>

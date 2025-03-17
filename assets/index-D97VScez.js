@@ -1,8 +1,6 @@
-import{_ as e}from"./index-DoESu-js.js";const t=`<!DOCTYPE html>
+import{_ as e}from"./index-jjUas1RV.js";const t=`<!DOCTYPE html>
 <template>
-  <style>
-
-  </style>
+  <style></style>
   <div class="ipSetting">
     vlan设置
   </div>

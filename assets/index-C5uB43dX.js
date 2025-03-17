@@ -1,12 +1,10 @@
-import{_ as c,l as p}from"./index-DoESu-js.js";import"./index-CmesAyKh.js";const u=`<!DOCTYPE html>
+import{_ as c,l as p}from"./index-jjUas1RV.js";import"./index-JolgRYIs.js";const u=`<!DOCTYPE html>
 <template>
-  <style>
-    .root {
-      height: 100%;
-      background-color: skyblue;
-    }
-
-  </style>
+  <style>.root {
+  height: 100%;
+  background-color: skyblue;
+}
+</style>
   <div id="root">
     <div class="card mb-4">
       <span class="yosong">鼠标放上来我有提示</span>
@@ -129,55 +127,48 @@ import{_ as c,l as p}from"./index-DoESu-js.js";import"./index-CmesAyKh.js";const
 </template>
 `,g=`<!DOCTYPE html>
 <template>
-  <style>
-    /* 提示框样式 */
-    .index_tips {
-      background-color: #fff;
-      z-index: 999;
-      color: #333;
-      border-radius: 12px;
-      box-shadow: 10px 2px 20px rgba(0, 0, 0, .15), -10px -2px 20px rgba(0, 0, 0, .15);
-      max-width: 400px;
-      font-size: 14px;
-
-
-      .tips_content {
-        min-height: 1.1rem;
-        line-height: 1.1rem;
-        font-size: small;
-        margin: 10px;
-        max-height: 250px;
-        overflow-x: hidden;
-
-        >div {
-          line-height: normal;
-        }
-      }
-
-      .tip {
-        position: absolute;
-        top: -9px;
-        content: '';
-        height: 15px;
-        width: 15px;
-        transform: rotate(45deg);
-        left: 101px;
-        background-color: #fff;
-      }
-
-      .tipLeft {
-        position: absolute;
-        top: -9px;
-        content: '';
-        height: 15px;
-        width: 15px;
-        transform: rotate(45deg);
-        left: 101px;
-        background-color: #fff;
-      }
-    }
-
-  </style>
+  <style>/* 提示框样式 */
+.index_tips {
+  background-color: #fff;
+  z-index: 999;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 10px 2px 20px rgba(0, 0, 0, 0.15), -10px -2px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  font-size: 14px;
+}
+.index_tips .tips_content {
+  min-height: 1.1rem;
+  line-height: 1.1rem;
+  font-size: small;
+  margin: 10px;
+  max-height: 250px;
+  overflow-x: hidden;
+}
+.index_tips .tips_content > div {
+  line-height: normal;
+}
+.index_tips .tip {
+  position: absolute;
+  top: -9px;
+  content: '';
+  height: 15px;
+  width: 15px;
+  transform: rotate(45deg);
+  left: 101px;
+  background-color: #fff;
+}
+.index_tips .tipLeft {
+  position: absolute;
+  top: -9px;
+  content: '';
+  height: 15px;
+  width: 15px;
+  transform: rotate(45deg);
+  left: 101px;
+  background-color: #fff;
+}
+</style>
   <div class="index_tips" style="position: fixed;top: 171.5px;left: 328.546875px;">
     <div class="tips_content"></div>
     <div class="tip"></div>

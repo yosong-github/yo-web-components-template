@@ -1,8 +1,6 @@
-import{_ as e}from"./index-DoESu-js.js";const n=`<!DOCTYPE html>
+import{_ as e}from"./index-jjUas1RV.js";const n=`<!DOCTYPE html>
 <template>
-  <style>
-
-  </style>
+  <style></style>
   <div class="devInfo">
     设备信息
   </div>
