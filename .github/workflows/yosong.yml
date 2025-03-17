@@ -4,6 +4,6 @@ jobs:
   jobs1:
     runs-on: ubuntu-latest
     setps:
-      -uses: actions/checkout@v4
-      -run: pwd
-      -run: pnpm --version
+      - uses: actions/checkout@v4
+      - run: pwd
+      - run: pnpm --version
