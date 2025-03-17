@@ -1,9 +1,8 @@
 on: push
 
 jobs:
-  jobs1:
+  test:
     runs-on: ubuntu-latest
     setps:
-      - uses: actions/checkout@v4
       - run: pwd
       - run: pnpm --version
