@@ -7,8 +7,713 @@
   <title>Document</title>
   <style>
   </style>
-  <script type="module" crossorigin src="./assets/index-jjUas1RV.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B1bHBu08.css">
+  <script type="module" crossorigin>(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function l(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(t){if(t.ep)return;t.ep=!0;const i=l(t);fetch(t.href,i)}})();const ie=`<!DOCTYPE html>
+<template>
+  <style>#app {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--theme-bg-color);
+}
+</style>
+  <div id="app">
+    <yo-router></yo-router>
+  </div>
+</template>
+`;class f{constructor(e){this.eventObj=e.obj,this.target=e.target||this.eventObj,this.eventType=e.eventType||"click",this.popup=e.popup||!1,this.bindEvent()}bindEvent(){let e=this;e.target.addEventListener(e.eventType,l=>{let o=l.target,t,i;s(o);function s(c){var m;if(c===document)return!1;t=((m=c==null?void 0:c.getAttribute("@"+e.eventType))==null?void 0:m.split(" "))||[],i=c==null?void 0:c.parentNode,t.length==0&&i?s(i):(t.forEach(d=>{e.eventObj.__proto__[d]&&e.eventObj.__proto__[d].call(e.eventObj,{fn:e.eventObj.__proto__[d],temp:e.eventObj,target:l,eventDom:c})}),i&&s(i))}})}}let a=(n,e)=>{var i;let l=document.createElement("div");l.innerHTML=e;const t=l.querySelector("template").content.cloneNode(!0);n.appendChild(t),n.event=new f({obj:n}),n.change=new f({obj:n,eventType:"change"}),n.change=new f({obj:n,eventType:"input"}),(i=n.init)==null||i.call(n)};const se=`<!DOCTYPE html>
+<template>
+  <yo-layout>
+  </yo-layout>
+</template>
+`,le=`<!DOCTYPE html>
+<template>
+  <style>.yo-layout {
+  display: flex;
+  height: 100vh;
+}
+.yo-layout .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.yo-layout .main .content {
+  flex: 1;
+  padding: 24px;
+}
+</style>
+  <div class="yo-layout">
+    <yo-layout-menu class="left"></yo-layout-menu>
+    <div class="main">
+      <yo-layout-header></yo-layout-header>
+      <div class="content">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>
+`,ae=`<!DOCTYPE html>
+<template>
+  <style>.yo-layout-aside {
+  box-sizing: border-box;
+  height: 100%;
+  width: 266px;
+  overflow-x: hidden;
+  padding: 16px 0 0 16px;
+}
+.yo-layout-aside a,
+.yo-layout-aside span {
+  font-size: 14px;
+}
+.yo-layout-aside .logo {
+  margin: 0 auto;
+  width: 80%;
+  height: calc(80px - 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.6px solid rgba(0, 0, 0, 0.077);
+  margin-bottom: 1rem;
+}
+.yo-layout-aside ul {
+  height: calc(100% - 80px - 1rem);
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+.yo-layout-aside ul svg {
+  transition: transform 0.3s;
+}
+.yo-layout-aside ul > .menu-item,
+.yo-layout-aside ul .submenu > div {
+  width: calc(100% - 32px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px;
+  margin: 0 16px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+.yo-layout-aside ul > .menu-item > a,
+.yo-layout-aside ul .submenu > div > a,
+.yo-layout-aside ul > .menu-item > span,
+.yo-layout-aside ul .submenu > div > span {
+  flex: 1;
+  color: var(--menu-defalut-color);
+  pointer-events: none;
+}
+.yo-layout-aside ul > .menu-item .point,
+.yo-layout-aside ul .submenu > div .point {
+  background-color: var(--menu-defalut-color);
+}
+.yo-layout-aside ul > .menu-item > i,
+.yo-layout-aside ul .submenu > div > i {
+  color: var(--menu-defalut-color);
+  pointer-events: none;
+}
+.yo-layout-aside ul .submenu {
+  flex-direction: column;
+}
+.yo-layout-aside ul .submenu ul {
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+}
+.yo-layout-aside ul .submenu > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 32px);
+}
+.yo-layout-aside ul > .active,
+.yo-layout-aside ul .open {
+  background-color: #fff;
+  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+.yo-layout-aside ul > .active svg,
+.yo-layout-aside ul .open svg {
+  transform: rotate(180deg);
+  fill: var(--menu-active-color);
+}
+.yo-layout-aside ul > .active i,
+.yo-layout-aside ul .open i,
+.yo-layout-aside ul > .active a,
+.yo-layout-aside ul .open a,
+.yo-layout-aside ul > .active span,
+.yo-layout-aside ul .open span {
+  color: var(--menu-active-color) !important;
+  /* font-size: 14.5px; */
+  font-weight: 600;
+}
+.yo-layout-aside ul > .active .point,
+.yo-layout-aside ul .open .point {
+  background-color: var(--menu-active-color) !important;
+  /* font-size: 14.5px; */
+  font-weight: 600;
+}
+.yo-layout-aside ul .submenu > ul > .active {
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0;
+}
+</style>
+  <div class="yo-layout-aside">
+    <div class="logo">yo-web-components</div>
+    <ul>
+
+    </ul>
+  </div>
+</template>
+`,re="modulepreload",ce=function(n,e){return new URL(n,e).href},_={},r=function(e,l,o){let t=Promise.resolve();if(l&&l.length>0){const s=document.getElementsByTagName("link"),c=document.querySelector("meta[property=csp-nonce]"),m=(c==null?void 0:c.nonce)||(c==null?void 0:c.getAttribute("nonce"));t=Promise.allSettled(l.map(d=>{if(d=ce(d,o),d in _)return;_[d]=!0;const p=d.endsWith(".css"),oe=p?'[rel="stylesheet"]':"";if(!!o)for(let g=s.length-1;g>=0;g--){const h=s[g];if(h.href===d&&(!p||h.rel==="stylesheet"))return}else if(document.querySelector(`link[href="${d}"]${oe}`))return;const u=document.createElement("link");if(u.rel=p?"stylesheet":re,p||(u.as="script"),u.crossOrigin="",u.href=d,m&&u.setAttribute("nonce",m),document.head.appendChild(u),p)return new Promise((g,h)=>{u.addEventListener("load",g),u.addEventListener("error",()=>h(new Error(`Unable to preload CSS for ${d}`)))})}))}function i(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return t.then(s=>{for(const c of s||[])c.status==="rejected"&&i(c.reason);return e().catch(i)})},v=[{path:"/login",component:()=>r(()=>Promise.resolve().then(()=>Me),void 0,import.meta.url),meta:{name:"login",notMenu:!0}},{path:"/example",component:()=>r(()=>Promise.resolve().then(()=>Ae),void 0,import.meta.url),meta:{name:"test.example",icon:"fld1Status"}},{path:"/home",component:()=>r(()=>Promise.resolve().then(()=>$e),void 0,import.meta.url),meta:{name:"menu.home",icon:"fld1Status"}},{path:"/system",meta:{name:"menu.system",icon:"fld1Diag"},children:[{path:"/deviceInfo",component:()=>r(()=>Promise.resolve().then(()=>je),void 0,import.meta.url),meta:{name:"menu.deviceInfo"}},{path:"/ipSetting",component:()=>r(()=>Promise.resolve().then(()=>Ye),void 0,import.meta.url),meta:{name:"menu.ipSetting"}},{path:"/accountSetting",component:()=>r(()=>Promise.resolve().then(()=>Ie),void 0,import.meta.url),meta:{name:"menu.accountSetting"}},{path:"/reboot",component:()=>r(()=>Promise.resolve().then(()=>Ve),void 0,import.meta.url),meta:{name:"menu.reboot"}},{path:"/upgrade",component:()=>r(()=>Promise.resolve().then(()=>Be),void 0,import.meta.url),meta:{name:"menu.upgrade"}},{path:"/restoreDefault",component:()=>r(()=>Promise.resolve().then(()=>Fe),void 0,import.meta.url),meta:{name:"menu.restoreDefault"}},{path:"/saveSettings",component:()=>r(()=>Promise.resolve().then(()=>Ze),void 0,import.meta.url),meta:{name:"menu.saveSettings"}}]},{path:"/monitoring",meta:{name:"menu.monitoring",icon:"fld1Discov"},children:[{path:"/switches",component:()=>r(()=>Promise.resolve().then(()=>Ue),void 0,import.meta.url),meta:{name:"menu.switches"}},{path:"/ONVIF",component:()=>r(()=>Promise.resolve().then(()=>We),void 0,import.meta.url),meta:{name:"menu.ONVIF"}},{path:"/portStatistics",component:()=>r(()=>Promise.resolve().then(()=>Xe),void 0,import.meta.url),meta:{name:"menu.portStatistics"}},{path:"/cableDiagnostics",component:()=>r(()=>Promise.resolve().then(()=>tt),void 0,import.meta.url),meta:{name:"menu.cableDiagnostics"}},{path:"/loopGuard",component:()=>r(()=>Promise.resolve().then(()=>ot),void 0,import.meta.url),meta:{name:"menu.loopGuard"}}]},{path:"/switchSettings",meta:{name:"menu.switchSettings",icon:"fld1Network"},children:[{path:"/portSettings",component:()=>r(()=>Promise.resolve().then(()=>st),void 0,import.meta.url),meta:{name:"menu.portSettings"}},{path:"/portTrunking",component:()=>r(()=>Promise.resolve().then(()=>at),void 0,import.meta.url),meta:{name:"menu.portTrunking"}},{path:"/portMirroring",component:()=>r(()=>Promise.resolve().then(()=>ct),void 0,import.meta.url),meta:{name:"menu.portMirroring"}},{path:"/portIsolation",component:()=>r(()=>Promise.resolve().then(()=>mt),void 0,import.meta.url),meta:{name:"menu.portIsolation"}},{path:"/staticMAC",component:()=>r(()=>Promise.resolve().then(()=>pt),void 0,import.meta.url),meta:{name:"menu.staticMAC"}},{path:"/searchMAC",component:()=>r(()=>Promise.resolve().then(()=>ht),void 0,import.meta.url),meta:{name:"menu.searchMAC"}},{path:"/MACList",component:()=>r(()=>Promise.resolve().then(()=>ft),void 0,import.meta.url),meta:{name:"menu.MACList"}},{path:"/DHCPSnooping",component:()=>r(()=>Promise.resolve().then(()=>bt),void 0,import.meta.url),meta:{name:"menu.DHCPSnooping"}}]},{path:"/vlanSettings",meta:{name:"menu.VLANSettings",icon:"fld1Vlan"},children:[{path:"/VLANSettings",component:()=>r(()=>Promise.resolve().then(()=>Et),void 0,import.meta.url),meta:{name:"menu.VLANSettings"}},{path:"/pvidSetting",component:()=>r(()=>Promise.resolve().then(()=>xt),void 0,import.meta.url),meta:{name:"menu.pvidSetting"}}]},{path:"/QoSSettings",meta:{name:"menu.QoSSettings",icon:"fld1Qos"},children:[{path:"/portRate",component:()=>r(()=>Promise.resolve().then(()=>Tt),void 0,import.meta.url),meta:{name:"menu.portRate"}},{path:"/stormControl",component:()=>r(()=>Promise.resolve().then(()=>Mt),void 0,import.meta.url),meta:{name:"menu.stormControl"}}]},{path:"/poeSetting",component:()=>r(()=>Promise.resolve().then(()=>Lt),void 0,import.meta.url),meta:{name:"menu.poeSetting",icon:"fld1PoE"}}],de=(n,e,l)=>{const o=n[e];return o?typeof o=="function"?o():Promise.resolve(o):new Promise((t,i)=>{(typeof queueMicrotask=="function"?queueMicrotask:setTimeout)(i.bind(null,new Error("Unknown variable dynamic import: "+e+(e.split("/").length!==l?". Note that variables only represent file names one level deep.":""))))})},E=n=>{for(const e in n)Object.keys(n[e]).forEach(l=>{let o=document.querySelectorAll(`[data-lang='${e}.${l}']`);o&&o.forEach(t=>{t.innerHTML=n[e][l]})})};let y=()=>new Promise(n=>{let e=sessionStorage.getItem("lang")||"Zh";if(e){e=="Zh"&&(e="zh"),window.langMap=window.langMap||{};let l=window.langMap[`${e}.json`];l?(E(l),n(!0)):de(Object.assign({"./language/en.json":()=>r(()=>Promise.resolve().then(()=>At),void 0,import.meta.url),"./language/zh.json":()=>r(()=>Promise.resolve().then(()=>$t),void 0,import.meta.url)}),`./language/${e}.json`,3).then(o=>{let t=o.default;window.langMap[`${e}.json`]=t,E(t)})}});class me extends HTMLElement{constructor(){super(),a(this,ae)}init(){this.itemHeight=51,this.hash=location.hash;let e=(t,i="")=>`
+        <li id="#${i+t.path}" class="menu-item ${this.hash=="#"+(i+t.path)?"active":""}">
+          ${i!=""?'<i class="point"></i>':`<i class="fa fa-${t.meta.icon}"></i>`}
+          <a data-lang="${t.meta.name}"></a>
+        </li>
+      `,l=(t,i)=>`
+        <li class="submenu">
+          <div class="${this.hash.includes(t.path)?"open":""}" >
+            ${`<i class="fa fa-${t.meta.icon}"></i>`}
+            <span data-lang="${t.meta.name}"></span>
+            <svg t="1684119979259" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="2500" width="16" height="16">
+              <path d="M185.884 327.55 146.3 367.133 512.021 732.779 877.7 367.133 838.117 327.55 511.997 653.676Z"
+                p-id="2501"></path>
+            </svg>
+          </div>
+          <ul style="height: ${this.hash.includes(t.path)?i.length*this.itemHeight:"0"}px;">
+            ${i.map(s=>e(s,t.path)).join("")}
+          </ul>
+        </li>
+      `,o="";v.forEach(t=>{var i;(i=t.meta)!=null&&i.notMenu||(t.children?o+=l(t,t.children):o+=e(t))}),this.querySelector("ul").innerHTML=o,y(),this.menuEvn()}menuEvn(){let e=this.querySelector(".yo-layout-aside>ul"),l=e==null?void 0:e.querySelectorAll(".submenu"),o=e==null?void 0:e.querySelectorAll(".menu-item");l==null||l.forEach(t=>{t.firstElementChild.onclick=i=>{i.stopPropagation(),t.querySelector("ul").style.height=="0px"?(t.querySelector("ul").style.height=t.querySelector("ul").children.length*this.itemHeight+"px",t.querySelector("div>svg").style.transform="rotateZ(180deg)"):(t.querySelector("ul").style.height="0px",t.querySelector("div>svg").style.transform="rotateZ(0deg)",t.querySelector("div").style.background="")}}),o==null||o.forEach(t=>{t.onclick=i=>{i.stopPropagation(),o==null||o.forEach(s=>s.setAttribute("class","menu-item")),i.target.setAttribute("class","menu-item active"),l==null||l.forEach(s=>{s!=i.target.parentElement.parentElement?(s.querySelector("ul").style.height="0px",s.querySelector("div>svg").style.transform="rotateZ(0deg)",s.querySelector("div").style.background="",s.firstElementChild.setAttribute("class","")):s.firstElementChild.setAttribute("class","open")}),location.href=t.id}})}connectedCallback(){window.addEventListener("hashchange",()=>{this.hash!=location.hash&&this.init()})}}customElements.define("yo-layout-menu",me);const ue=`<!DOCTYPE html>
+<template>
+  <style>.yo-layout-header {
+  height: 80px;
+  padding: 24px;
+  padding-bottom: 0;
+  border-bottom: 0.6px solid rgba(0, 0, 0, 0.077);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>
+  <div class="yo-layout-header">
+    <div class="breadcrumb">面包屑</div>
+    <div class="edit">操作区</div>
+  </div>
+</template>
+`;class pe extends HTMLElement{constructor(){super(),a(this,ue)}init(){b(v)}}customElements.define("yo-layout-header",pe);class ge extends HTMLElement{constructor(){super(),a(this,le)}init(){}}customElements.define("yo-layout",ge);function he(n){let e=n.replace(/([a-z0-9])([A-Z])/g,"$1-$2").toLowerCase();return`<${e}></${e}>`}class ye extends HTMLElement{constructor(){super(),this.allPaths=b(v),a(this,se)}init(){window.location.hash||(location.hash="/example")}renderPage(){const e=window.location.hash;this.allPaths[e]?this.allPaths[e].component().then(o=>{this.querySelector("yo-layout").querySelector("slot").innerHTML=he(Object.keys(o)[0])}):location.hash="/example"}connectedCallback(){this.renderPage(),window.addEventListener("hashchange",()=>{this.renderPage()})}}customElements.define("yo-router",ye);const b=(n,e="#")=>{let l={};return n.forEach(o=>{if(o.children)l={...l,...b(o.children,e+o.path)};else{const t=e+o.path;l[t]=o}}),l};class fe extends HTMLElement{constructor(){super(),a(this,ie)}init(){}connectedCallback(){y(),window.addEventListener("load",()=>{y()})}}customElements.define("app-component",fe);const ve=`<!DOCTYPE html>
+<template>
+  <style>.root {
+  height: 100%;
+  background-color: skyblue;
+}
+</style>
+  <div class="login">
+    我是登录页面
+    <button @click="goHome">去首页</button>
+  </div>
+
+</template>
+`,be=`<!DOCTYPE html>
+<template>
+  <style>.yo-button {
+  background-color: #aaa;
+  display: block;
+  min-width: 74px;
+  line-height: 16px;
+  font-size: 12px;
+  padding: 6px 12px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 0;
+  text-align: center;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+}
+.yo-button:hover {
+  filter: brightness(110%);
+}
+</style>
+  <button class="yo-button"></button>
+</template>
+`;class _e extends HTMLElement{static get observedAttributes(){return["type","lang"]}constructor(){super(),a(this,be)}init(){this.querySelector(".yo-button").setAttribute("style",this.getAttribute("style"))}attributeChangedCallback(e,l,o){e==="type"&&(this.querySelector(".yo-button").style.backgroundColor=`var(--color-theme-${o})`),e==="lang"&&this.querySelector(".yo-button").setAttribute("data-lang",o)}}customElements.define("yo-button",_e);const Ee=`<!DOCTYPE html>
+
+<template>
+  <style>.toggle {
+  width: 50px;
+  height: 21px;
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 25px;
+  background-color: #e1e1e1;
+  transition: background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle::after {
+  content: '';
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 2.5px;
+  transition: margin-left 0.3s ease;
+}
+.toggle_on::after {
+  margin-left: calc(50% + 4px);
+}
+.toggle_on {
+  background-color: var(--color-theme-primary);
+}
+</style>
+  <div class="toggle">
+    <span data-lang="common.on" style="
+        color: #fff;
+        font-size: 10px;
+        margin-left: 1px;
+        pointer-events: none;
+      "></span>
+    <span data-lang="common.off" style="
+        color: #aaa;
+        margin-right: 0;
+        font-size: 10px;
+        margin-right: 1px;
+        pointer-events: none;
+      "></span>
+  </div>
+</template>
+`;class Se extends HTMLElement{static get observedAttributes(){return["active"]}constructor(){super(),this.getAttribute("active")||this.getAttribute("active")===""?this.active=!0:this.active=!1,a(this,Ee)}init(){this.querySelector(".toggle").setAttribute("style",this.getAttribute("style")),this.active?this.querySelector(".toggle").setAttribute("class","toggle toggle_on"):this.querySelector(".toggle").setAttribute("class","toggle"),this.getAttribute("id")||this.getAttribute("id")===""?this.querySelector(".toggle").setAttribute("id","btn-toggle"+this.getAttribute("id")):this.querySelector(".toggle").setAttribute("id","btn-toggle")}attributeChangedCallback(e,l,o){e==="active"&&(o==="true"||o===""?this.active=!0:this.active=!1,this.init())}}customElements.define("yo-switch",Se);const xe=`<!DOCTYPE html>
+<template>
+  <style>.mask {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+</style>
+  <div class="mask"></div>
+</template>
+`;class Pe extends HTMLElement{static get observedAttributes(){return["show"]}constructor(){super(),a(this,xe)}init(){}attributeChangedCallback(e,l,o){console.log(e,l,o),e==="show"&&(o==="true"?this.style.display="block":this.style.display="none")}}customElements.define("yo-mask",Pe);const Te=`<!DOCTYPE html>
+<template>
+  <style>.yo-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+}
+.yo-card .title {
+  background-color: var(--theme-color);
+}
+</style>
+  <div class="yo-card">
+    <div class="title">title</div>
+    card
+  </div>
+</template>
+`;class Oe extends HTMLElement{constructor(){super(),a(this,Te)}init(){}}customElements.define("yo-card",Oe);class S extends HTMLElement{constructor(){super(),a(this,ve)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-login",S);const Me=Object.freeze(Object.defineProperty({__proto__:null,YoPageLogin:S},Symbol.toStringTag,{value:"Module"})),we=`<!DOCTYPE html>
+<template>
+  <style>.root {
+  height: 100%;
+  background-color: skyblue;
+}
+</style>
+  <div id="root">
+    <div class="card mb-4">
+      <span class="yosong">鼠标放上来我有提示</span>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">我是卡片header</div>
+      <div class="card-body  flex juc-between">
+        <div class="card  mb-4 flex-1">
+          <div class="card-header">
+            <span>自定义按钮</span>
+          </div>
+          <div class="card-body flex juc-between">
+            <yo-button type="primary" lang="test.primary" @click="customBtn"></yo-button>
+            <yo-button type="info" lang="test.info" @click="customBtn"></yo-button>
+            <yo-button type="danger" lang="test.danger" @click="customBtn"></yo-button>
+            <yo-button type="success" lang="test.success" @click="customBtn"></yo-button>
+            <yo-button lang="test.defalut" @click="customBtn"></yo-button>
+          </div>
+        </div>
+        <div style="width: 16px;"></div>
+        <div class="card mb-4 flex-1">
+          <div class="card-header">
+            <span>自定义开关</span>
+          </div>
+          <div class="card-body flex juc-between">
+            <yo-switch @click="switchEvn" active="false"></yo-switch>
+            <yo-switch @click="switchEvn"></yo-switch>
+            <yo-switch @click="switchEvn" active="true"></yo-switch>
+            <yo-switch @click="switchEvn" active></yo-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">自定义表格</div>
+      <div class="card-body">
+        <table class="yotable center">
+          <thead>
+            <tr>
+              <th data-lang="Port" rowspan="2"><a href="javascript:">端口</a></th>
+              <th data-lang="Status" rowspan="2">开关</th>
+              <th data-lang="Speed/Duplex" colspan="2">速率/双工</th>
+              <th data-lang="Flow Control" colspan="2">流量控制</th>
+            </tr>
+            <tr>
+              <th data-lang="Config Status">配置状态</th>
+              <th data-lang="Actual Status">实际状态</th>
+              <th data-lang="Config Status">配置状态</th>
+              <th data-lang="Actual Status">实际状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Port 1</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Half Duplex"> 半双工 </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Half Duplex"> 半双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td data-lang="Disabled">关闭</td>
+              <td>
+                100M /
+                <span data-lang="Auto"> Auto </span>
+              </td>
+              <td data-lang="Disconnected">断开</td>
+              <td data-lang="Disabled">关闭</td>
+              <td data-lang="Disabled">关闭</td>
+            </tr>
+
+            <tr>
+              <td>Port 2</td>
+              <td style="color: var(--color)" data-lang="Enabled">开启</td>
+              <td>
+                Auto /
+                <span data-lang="Auto"> Auto </span>
+              </td>
+              <td style="color: var(--color)">
+                1000M/
+                <span data-lang="Full Duplex"> 全双工 </span>
+              </td>
+              <td data-lang="Enabled">开启</td>
+              <td data-lang="Enabled">开启</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    \x3C!-- <yo-mask show="false" @click="close"></yo-mask> -->
+
+    \x3C!-- <button class="gologin" @click="goLogin">去登陆</button> -->
+  </div>
+</template>
+`,Le=`<!DOCTYPE html>
+<template>
+  <style>/* 提示框样式 */
+.index_tips {
+  background-color: #fff;
+  z-index: 999;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 10px 2px 20px rgba(0, 0, 0, 0.15), -10px -2px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  font-size: 14px;
+}
+.index_tips .tips_content {
+  min-height: 1.1rem;
+  line-height: 1.1rem;
+  font-size: small;
+  margin: 10px;
+  max-height: 250px;
+  overflow-x: hidden;
+}
+.index_tips .tips_content > div {
+  line-height: normal;
+}
+.index_tips .tip {
+  position: absolute;
+  top: -9px;
+  content: '';
+  height: 15px;
+  width: 15px;
+  transform: rotate(45deg);
+  left: 101px;
+  background-color: #fff;
+}
+.index_tips .tipLeft {
+  position: absolute;
+  top: -9px;
+  content: '';
+  height: 15px;
+  width: 15px;
+  transform: rotate(45deg);
+  left: 101px;
+  background-color: #fff;
+}
+</style>
+  <div class="index_tips" style="position: fixed;top: 171.5px;left: 328.546875px;">
+    <div class="tips_content"></div>
+    <div class="tip"></div>
+  </div>
+</template>
+`;class x extends HTMLElement{constructor(){super(),a(this,Le)}init(){}}customElements.define("yo-tips",x);const Ce=(n,e,l="bottom")=>{let o,t=n.target.getBoundingClientRect();n.target.style.cursor="pointer";let i=new x;i.querySelector(".index_tips .tips_content").innerHTML=e;let s=i.querySelector(".index_tips"),c=s.querySelector(".tips_content"),m=s.querySelector(".tip");document.querySelector("body").appendChild(i),clearTimeout(o),l=="bottom"?(s.style.display="block",s.style.top=t.y+t.height+15+"px",m.style.transform="rotate(45deg)",s.style.left=t.x-s.getBoundingClientRect().width/2+t.width/2+"px",m.style.left=c.getBoundingClientRect().width/2+"px",m.style.top="-8px"):l=="left"&&(s.style.display="block",s.style.top=t.y-c.getBoundingClientRect().height/2+"px",s.style.left=t.x-t.width-(c.getBoundingClientRect().width-20)+"px",m.style.transform="rotate(135deg)",m.style.top=c.getBoundingClientRect().height/2+2+"px",m.style.left=c.getBoundingClientRect().width+11+"px"),n.target.onmouseleave=()=>{clearTimeout(o),o=setTimeout(()=>{s.style.left="0px",s.style.top="0px",s.style.display="none",document.querySelector("body").removeChild(i)},100),s.onmouseover=()=>{clearTimeout(o),s.onmouseleave=()=>{clearTimeout(o),o=setTimeout(()=>{s.style.left="0px",s.style.top="0px",s.style.display="none",document.querySelector("body").removeChild(i)},100)}}}};class P extends HTMLElement{constructor(){super(),a(this,we)}init(){this.querySelector(".yosong").onmouseover=e=>{Ce(e,`
+        我是提示内容，提示内容<br>
+        我是提示内容，提示内容<br>
+        我是提示内容，提示内容<br>
+        我是提示内容，提示内容<br>
+      `)},y()}customBtn(){console.log("自定义组件事件触发")}switchEvn({eventDom:e,fn:l,target:o,temp:t}){let i=e.getAttribute("active");i==""||i=="true"?e.setAttribute("active","false"):e.setAttribute("active","true")}}customElements.define("yo-page-example",P);const Ae=Object.freeze(Object.defineProperty({__proto__:null,YoPageExample:P},Symbol.toStringTag,{value:"Module"})),De=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="home">
+    首页
+  </div>
+</template>
+`;class T extends HTMLElement{constructor(){super(),a(this,De)}init(){}}customElements.define("yo-page-home",T);const $e=Object.freeze(Object.defineProperty({__proto__:null,YoPageHome:T},Symbol.toStringTag,{value:"Module"})),He=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="devInfo">
+    设备信息
+  </div>
+
+</template>
+`;class O extends HTMLElement{constructor(){super(),a(this,He)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-device-info",O);const je=Object.freeze(Object.defineProperty({__proto__:null,YoPageDeviceInfo:O},Symbol.toStringTag,{value:"Module"})),ke=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    ip设置
+  </div>
+
+</template>
+`;class M extends HTMLElement{constructor(){super(),a(this,ke)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-ip-setting",M);const Ye=Object.freeze(Object.defineProperty({__proto__:null,YoPageIpSetting:M},Symbol.toStringTag,{value:"Module"})),Re=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    账号设置
+  </div>
+
+</template>
+`;class w extends HTMLElement{constructor(){super(),a(this,Re)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-account-setting",w);const Ie=Object.freeze(Object.defineProperty({__proto__:null,YoPageAccountSetting:w},Symbol.toStringTag,{value:"Module"})),ze=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    重启
+  </div>
+
+</template>
+`;class L extends HTMLElement{constructor(){super(),a(this,ze)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-reboot",L);const Ve=Object.freeze(Object.defineProperty({__proto__:null,YoPageReboot:L},Symbol.toStringTag,{value:"Module"})),qe=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    系统更新
+  </div>
+
+</template>
+`;class C extends HTMLElement{constructor(){super(),a(this,qe)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-upgrade",C);const Be=Object.freeze(Object.defineProperty({__proto__:null,YoPageUpgrade:C},Symbol.toStringTag,{value:"Module"})),Ne=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    回复出场色
+  </div>
+
+</template>
+`;class A extends HTMLElement{constructor(){super(),a(this,Ne)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-restore-default",A);const Fe=Object.freeze(Object.defineProperty({__proto__:null,YoPageRestoreDefault:A},Symbol.toStringTag,{value:"Module"})),Qe=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    保存配置
+  </div>
+
+</template>
+`;class D extends HTMLElement{constructor(){super(),a(this,Qe)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-save-setting",D);const Ze=Object.freeze(Object.defineProperty({__proto__:null,YoPageSaveSetting:D},Symbol.toStringTag,{value:"Module"})),Ge=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    整网交换机
+  </div>
+
+</template>
+`;class $ extends HTMLElement{constructor(){super(),a(this,Ge)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-switch",$);const Ue=Object.freeze(Object.defineProperty({__proto__:null,YoPageSwitch:$},Symbol.toStringTag,{value:"Module"})),Ke=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    onvif
+  </div>
+
+</template>
+`;class H extends HTMLElement{constructor(){super(),a(this,Ke)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-onvif",H);const We=Object.freeze(Object.defineProperty({__proto__:null,YoPageOnvif:H},Symbol.toStringTag,{value:"Module"})),Je=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口统计
+  </div>
+
+</template>
+`;class j extends HTMLElement{constructor(){super(),a(this,Je)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-statistics",j);const Xe=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortStatistics:j},Symbol.toStringTag,{value:"Module"})),et=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    线缆检测
+  </div>
+
+</template>
+`;class k extends HTMLElement{constructor(){super(),a(this,et)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-cable-diagnostics",k);const tt=Object.freeze(Object.defineProperty({__proto__:null,YoPageCableDiagnostics:k},Symbol.toStringTag,{value:"Module"})),nt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    环路玉皇
+  </div>
+
+</template>
+`;class Y extends HTMLElement{constructor(){super(),a(this,nt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-loop-guard",Y);const ot=Object.freeze(Object.defineProperty({__proto__:null,YoPageLoopGuard:Y},Symbol.toStringTag,{value:"Module"})),it=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口设置
+  </div>
+
+</template>
+`;class R extends HTMLElement{constructor(){super(),a(this,it)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-setting",R);const st=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortSetting:R},Symbol.toStringTag,{value:"Module"})),lt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口聚合
+  </div>
+
+</template>
+`;class I extends HTMLElement{constructor(){super(),a(this,lt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-trunking",I);const at=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortTrunking:I},Symbol.toStringTag,{value:"Module"})),rt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口镜像
+  </div>
+
+</template>
+`;class z extends HTMLElement{constructor(){super(),a(this,rt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-mirroring",z);const ct=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortMirroring:z},Symbol.toStringTag,{value:"Module"})),dt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口隔离
+  </div>
+
+</template>
+`;class V extends HTMLElement{constructor(){super(),a(this,dt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-isolation",V);const mt=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortIsolation:V},Symbol.toStringTag,{value:"Module"})),ut=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    静态mac
+  </div>
+
+</template>
+`;class q extends HTMLElement{constructor(){super(),a(this,ut)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-static-mac",q);const pt=Object.freeze(Object.defineProperty({__proto__:null,YoPageStaticMac:q},Symbol.toStringTag,{value:"Module"})),gt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    mac收缩
+  </div>
+
+</template>
+`;class B extends HTMLElement{constructor(){super(),a(this,gt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-search-mac",B);const ht=Object.freeze(Object.defineProperty({__proto__:null,YoPageSearchMac:B},Symbol.toStringTag,{value:"Module"})),yt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    mac列表
+  </div>
+
+</template>
+`;class N extends HTMLElement{constructor(){super(),a(this,yt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-mac-list",N);const ft=Object.freeze(Object.defineProperty({__proto__:null,YoPageMacList:N},Symbol.toStringTag,{value:"Module"})),vt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    DHCP-snooping
+  </div>
+
+</template>
+`;class F extends HTMLElement{constructor(){super(),a(this,vt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-dhcp-snooping",F);const bt=Object.freeze(Object.defineProperty({__proto__:null,YoPageDhcpSnooping:F},Symbol.toStringTag,{value:"Module"})),_t=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    vlan设置
+  </div>
+
+</template>
+`;class Q extends HTMLElement{constructor(){super(),a(this,_t)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-vlan-setting",Q);const Et=Object.freeze(Object.defineProperty({__proto__:null,YoPageVlanSetting:Q},Symbol.toStringTag,{value:"Module"})),St=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    pvid
+  </div>
+
+</template>
+`;class Z extends HTMLElement{constructor(){super(),a(this,St)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-pvid-setting",Z);const xt=Object.freeze(Object.defineProperty({__proto__:null,YoPagePvidSetting:Z},Symbol.toStringTag,{value:"Module"})),Pt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    端口娴熟
+
+  </div>
+
+</template>
+`;class G extends HTMLElement{constructor(){super(),a(this,Pt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-port-rate",G);const Tt=Object.freeze(Object.defineProperty({__proto__:null,YoPagePortRate:G},Symbol.toStringTag,{value:"Module"})),Ot=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    风暴控制
+  </div>
+
+</template>
+`;class U extends HTMLElement{constructor(){super(),a(this,Ot)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-storm-control",U);const Mt=Object.freeze(Object.defineProperty({__proto__:null,YoPageStormControl:U},Symbol.toStringTag,{value:"Module"})),wt=`<!DOCTYPE html>
+<template>
+  <style></style>
+  <div class="ipSetting">
+    poe设置
+
+  </div>
+
+</template>
+`;class K extends HTMLElement{constructor(){super(),a(this,wt)}init(){}goHome(){location.href="#/home"}}customElements.define("yo-page-poe-setting",K);const Lt=Object.freeze(Object.defineProperty({__proto__:null,YoPagePoeSetting:K},Symbol.toStringTag,{value:"Module"})),W={on:"on",off:"off"},J={home:"Homepage",system:"System Settings",deviceInfo:"Device Info",ipSetting:"IP Settings",accountSetting:"Account Settings",reboot:"Reboot",upgrade:"Upgrade",restoreDefault:"Restore Default",saveSettings:"Save Settings",switches:"Switches",ONVIF:"ONVIF",portStatistics:"Port Statistics",cableDiagnostics:"Cable Diagnostics",loopGuard:"Loop Guard",portSettings:"Port Settings",portTrunking:"Port Trunking",portMirroring:"Port Mirroring",portIsolation:"Port Isolation",staticMAC:"Static MAC",searchMAC:"Search MAC",MACList:"MAC List",DHCPSnooping:"DHCP Snooping",VLANSettings:"VLAN Settings",pvidSetting:"Pvid Settings",portRate:"Port Rate",stormControl:"Storm Control",poeSetting:"PoE Settings",monitoring:"Monitoring",switchSettings:"Switch Settings",QoSSettings:"QoS Settings"},X={primary:"主题",info:"信息",danger:"危险",success:"成功",defalut:"默认",example:"示例"},Ct={common:W,menu:J,test:X},At=Object.freeze(Object.defineProperty({__proto__:null,common:W,default:Ct,menu:J,test:X},Symbol.toStringTag,{value:"Module"})),ee={on:"开",off:"关"},te={home:"首页",deviceInfo:"设备信息",ipSetting:"IP设置",accountSetting:"账号设置",reboot:"系统重启",upgrade:"系统升级",restoreDefault:"恢复出厂",saveSettings:"保存配置",switches:"整网交换机",ONVIF:"ONVIF",portStatistics:"端口统计",cableDiagnostics:"线缆检测",loopGuard:"环路预防",portSettings:"端口设置",portTrunking:"端口聚合",portMirroring:"端口镜像",portIsolation:"端口隔离",staticMAC:"静态MAC",searchMAC:"MAC搜索",MACList:"MAC列表",DHCPSnooping:"DHCP Snooping",VLANSettings:"VLAN配置",pvidSetting:"Pvid配置",portRate:"端口限速",stormControl:"风暴控制",poeSetting:"PoE配置",system:"系统管理",monitoring:"监控管理",switchSettings:"交换机配置",QoSSettings:"QoS配置"},ne={primary:"主题",info:"信息",danger:"危险",success:"成功",defalut:"默认",example:"示例"},Dt={common:ee,menu:te,test:ne},$t=Object.freeze(Object.defineProperty({__proto__:null,common:ee,default:Dt,menu:te,test:ne},Symbol.toStringTag,{value:"Module"}));</script>
+  <style rel="stylesheet" crossorigin>/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}:root{--color-theme-primary: #3f51b5;--color-theme-info: #3f9ab5;--color-theme-danger: #b53f3f;--color-theme-success: #4bb53f;--font-default-color: #344767;--font-active-color: var(--color-theme-primary);--menu-active-color: #000;--menu-defalut-color: #67748e}*{box-sizing:border-box;color:var(--font-default-color)}body{font-size:16px}.card{padding:16px;position:relative;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:0 solid rgba(0,0,0,.125);border-radius:1rem;box-shadow:0 20px 27px #0000000d}.card-header{margin-bottom:12px;font-weight:600;color:var(--font-active-color)}.card-body{flex:1}.yotable{width:100%;border-collapse:collapse;border-width:1px;border-spacing:0;font-size:14px;max-width:100%;text-align:left}.yotable thead tr th{background:#f5f7fa}.yotable th{font-weight:700;padding:16px;font-size:small}.yotable td{border-top:solid #c9d1e455;border-width:.9px;padding:16px}.yotable tbody>tr{transition:background-color .25s ease}.yotable tbody>tr:hover{background-color:#f5f7fa!important}.yotable a{color:var(--color-theme-primary);text-decoration:underline}.center{text-align:center}.yotable .fw{font-weight:600}.yotable .tr{text-align:right}.yotable .tl{text-align:left}.yotable .w100{width:150px}.yotable .w40{width:40px}.yotable .w169{width:169px}.yotable .w300{width:300px}.yotable .yo_success{color:var(--color-theme-success)}.yotable select{cursor:pointer;font-family:inherit;font-size:90%;text-indent:0;vertical-align:middle;outline:0;padding:6px;border-radius:3px;border:1px solid #d0d7e7;background-color:#fff}.yotable input{outline:0;padding:6px;border-radius:3px;border:1px solid #d0d7e7;background-color:#fff}.stripe tr:nth-child(2n){background-color:#fafafa}.flex{display:flex}.flex-1{flex:1}.juc-between{justify-content:space-between}.flex-center{align-items:center;justify-content:center}.mb-0{margin-bottom:0!important}.mb-1{margin-bottom:.25rem!important}.mb-2{margin-bottom:.5rem!important}.mb-3{margin-bottom:1rem!important}.mb-4{margin-bottom:1.5rem!important}.mb-5{margin-bottom:3rem!important}.mb-6{margin-bottom:4rem!important}.mb-7{margin-bottom:6rem!important}.mb-8{margin-bottom:8rem!important}.mb-9{margin-bottom:10rem!important}.mb-10{margin-bottom:12rem!important}.mb-11{margin-bottom:14rem!important}.mb-12{margin-bottom:16rem!important}.mb-auto{margin-bottom:auto!important}@font-face{font-family:FontAwesome;src:url(data:font/woff2;base64,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) format("woff2");font-weight:400;font-style:normal}.point{background-color:#000;border-radius:50%;width:6px;height:6px;margin:auto 15px auto 7px}.fa{display:inline-block;font: 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:18px;margin-right:8px}.fa-fld1Status:before{content:""}.fa-fld1Qos:before{content:""}.fa-fld1PoE:before{content:""}.fa-fld1Acl:before{content:""}.fa-fld1STP:before{content:""}.fa-fld1Mac:before{content:""}.fa-fld1Mcast:before{content:""}.fa-fld1Network:before{content:""}.fa-fld1ERPS:before{content:""}.fa-fld1Diag:before{content:""}.fa-fld1Port:before{content:""}.fa-fld1Discov:before{content:""}.fa-fld1Sec:before{content:""}.fa-fld1Mgmt:before{content:""}.fa-fld1Vlan:before{content:""}</style>
 </head>
 
 <body>
